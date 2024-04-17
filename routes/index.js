@@ -7,9 +7,11 @@ const initDb = require("./init/initdb")
 const wrapAsync=require("../utils/wrapAsync");
 const ExpressError=require("../utils/ExpressError")
 const {listingsSchema,reviewSchema}=require("../schema")
-const Joi = require('joi');
+const Joi = require('../schema');
 const app = require('../app');
 const session = require('express-session');
+const flash = require('connect-flash')
+
 
 
 const sessionOptions = {
@@ -23,7 +25,12 @@ const sessionOptions = {
   },
 };
 
+
+
 router.use(session(sessionOptions));
+router.use(flash());
+
+
 
 
 const validateListing =(req,res,next)=>{
@@ -51,6 +58,11 @@ const validateReview =(req,res,next)=>{
 router.get('/', function(req, res, next) {
   res.render('index');
 });
+
+router.use((req,res,next)=>{
+  res.locals.success= req.flash("success");
+  next();
+})
  /* listings */
 router.get("/listings",wrapAsync(async (req,res)=>{
  const allListings = await listings.find({});
@@ -80,6 +92,7 @@ router.post('/listings',validateListing,wrapAsync(async(req,res,next)=> {
     description:req.body.description
   })
   await newlistings.save();
+  req.flash("success", "succesfully created new listing");
   res.redirect("/listings")
 }));
 
