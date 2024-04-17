@@ -5,6 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const methodOverride = require("method-override");
 const ejsMate=require("ejs-mate");
+const session = require('express-session');
+
+const sessionOptions = {
+  secret: "mysupersecretcode",
+  resave:false,
+  saveUninitialized:true
+};
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

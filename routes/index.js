@@ -8,6 +8,22 @@ const wrapAsync=require("../utils/wrapAsync");
 const ExpressError=require("../utils/ExpressError")
 const {listingsSchema,reviewSchema}=require("../schema")
 const Joi = require('joi');
+const app = require('../app');
+const session = require('express-session');
+
+
+const sessionOptions = {
+  secret: "mysupersecretcode",
+  resave:false,
+  saveUninitialized:true,
+  cookie:{
+    expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+    maxAge : 7 * 24 * 60 * 60 * 1000,
+    httpOnly: true
+  },
+};
+
+router.use(session(sessionOptions));
 
 
 const validateListing =(req,res,next)=>{
