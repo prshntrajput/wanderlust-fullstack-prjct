@@ -1,0 +1,53 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <br>
+    <div class="edittitle offset-2">
+    <h2>Edit Listing</h2>
+    </div>
+    <form action="/listings/<%= listingdata._id %>?_method=PUT" class="needs-validation offset-2 col-8" novalidate method="POST">
+        <div class="mb-2">
+            <label for="title" class="form-label">Title</label>
+         <input type="text" placeholder="Enter Title" name="listingdata.title" class="form-control" required value="<%=listingdata.title %>">
+          <div class="invalid-feedback">Please enter title</div>
+        
+        </div>
+
+         <div class="mb-2">
+            <label for="description" class="form-label">Description</label>
+         <textarea type="text" placeholder="Enter description"  name="description" class="form-control" required ><%=listingdata.description %></textarea>
+     
+        </div>
+
+         <div class="mb-2">
+            <label for="location" class="form-label">Location</label> 
+         <input type="text" placeholder="Enter location" name="location" class="form-control" required value="<%=listingdata.location %>">
+        
+        </div>
+
+        <div class="pr-co">
+
+           <div class="mb-2 col-3 offset-0">
+            <label for="price" class="form-label">Price</label> 
+         <input  placeholder="Enter Price" name="price" value="<%=listingdata.price %>" required class="form-control">
+       
+        </div>
+
+         <div class="mb-2 col-8 offset-1">
+              <label for="Country" class="form-label">Country</label>
+         <input type="text" placeholder="Enter Country" name="country" class="form-control" required value="<%=listingdata.country %>" class="form-control">
+        
+        </div>
+        </div>
+
+      
+
+         <div class="mb-2">
+            <label for="image" class="form-label">Image</label> 
+         <input type="text" placeholder="Enter image URL/link" name="image" required class="form-control">
+    
+        </div>
+     <button class="btn btn-dark" style="background: red; border: none;">Edit  Details</button>
+     <br> <br>
+    </form>
+    <script scr="/javascripts/script.js"></script>
+</body>

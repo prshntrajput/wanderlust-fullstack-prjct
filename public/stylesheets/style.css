@@ -1,0 +1,143 @@
+*{
+font-family: 'Allura', cursive;
+font-family: 'Chakra Petch', sans-serif;
+font-family: 'Dancing Script', cursive;
+font-family: 'Geologica', sans-serif;
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Libre Franklin', sans-serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Playpen Sans', cursive;
+font-family: 'Poppins', sans-serif;
+font-family: 'Recursive', sans-serif;
+font-family: 'Russo One', sans-serif;
+}
+
+.navbar{
+  height:4rem;
+  background-color: white;
+}
+
+.bg-color{
+    background-color: white;
+}
+
+.fa-mountain-sun{
+  color:red;
+  font-size:2rem;
+}
+
+.nav-link{
+  color:#222222 !important;
+  font-weight: 600;
+}
+
+.fa-instagram{
+  color:rgb(175, 25, 98);
+}
+
+.fa-linkedin{
+  color:#0077B5;
+}
+
+.fa-facebook{
+  color:#0862F7;
+}
+
+.f-info{
+  text-align: center;
+  height:8rem;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  background-color: rgb(255, 255, 255);
+}
+
+.f-info-social i{
+  font-size: 1.6rem;
+  margin-top:0.8rem;
+  margin-right:1rem;
+}
+
+.f-info-social{
+  display: flex;
+  width:100%;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  
+}
+.f-info-links{
+  width:100%;
+  vertical-align: middle;
+}
+
+.f-info-links a{
+  text-decoration: none;
+  color:#222222;
+ }
+
+.f-info-links a:hover {
+  text-decoration: underline;
+}
+
+.card{
+  border:none !important;
+  margin-bottom: 1rem;
+}
+
+.card-img-top{
+  border-radius: 1rem !important;
+  width:100% !important;
+  object-fit: cover !important;
+}
+
+.card-body{
+  padding:0 !important;
+}
+
+.card-text{
+  font-weight: 200;
+  color: black;
+}
+
+.listinglink{
+  text-decoration: none;
+}
+
+/* Card Effect */
+.card-image-overlay{
+  opacity:0;
+}
+
+.card-img-overlay:hover{
+  opacity:0.2;
+  background-color: rgb(248, 246, 243);
+}
+
+/* show page */
+.show-image{
+    height: 30vh;
+    width:20vw;
+}
+
+.btns{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:1vw;
+}
+
+.show-card{
+    padding-left: 0;
+    padding-right:0;
+
+}
+
+.pr-lo{
+    display: flex;
+}
+
+.pr-co{
+    display: flex;
+}
